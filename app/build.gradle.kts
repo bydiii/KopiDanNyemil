@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.kopidannyemil"
-    compileSdk = 37
+    compileSdk = 35 // Ubah kembali dari 37 ke 35
 
     defaultConfig {
         applicationId = "com.example.kopidannyemil"
         minSdk = 24
-        targetSdk = 37
+        targetSdk = 35 // Ubah kembali dari 37 ke 35
         versionCode = 1
         versionName = "1.0"
     }
@@ -21,18 +21,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
     buildFeatures {
         compose = true
     }
 }
 
 dependencies {
-    // Dipersonalisasi ke versi terbaru sesuai saran Android Studio
-    implementation("androidx.core:core-ktx:1.19.1")
-    implementation("androidx.activity:activity-compose:1.13.0")
-
-    // Compose BOM versi terbaru
-    implementation(platform("androidx.compose:compose-bom:2026.09.00"))
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.activity:activity-compose:1.10.0")
+    implementation(platform("androidx.compose:compose-bom:2024.12.01"))
 
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
@@ -40,6 +41,6 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material:material-icons-extended")
 
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.11.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
     debugImplementation("androidx.compose.ui:ui-tooling")
 }
